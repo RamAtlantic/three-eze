@@ -1,4 +1,4 @@
-// File: /Users/ramiroatlantic/Desktop/CROSSUP/landings-eze/three/app/page.tsx
+// File: /Users/ramiroatlantic/Desktop/CASINOS/MMaker/landings-eze/three/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

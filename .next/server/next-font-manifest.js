@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/ramiroatlantic/Desktop/CROSSUP/landings-eze/three/app/layout\":[\"static/media/330d5559b8e2c3d6-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/ramiroatlantic/Desktop/CASINOS/MMaker/landings-eze/three/app/layout\":[\"static/media/330d5559b8e2c3d6-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

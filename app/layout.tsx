@@ -128,6 +128,45 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="lead-event"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            document.addEventListener('DOMContentLoaded', function () {
+              const observer = new MutationObserver((mutationsList, observer) => {
+                for (const mutation of mutationsList) {
+                  if (mutation.type === 'childList') {
+                    const buttonIds = ["cta-button", "cta-button-2"];
+                    buttonIds.forEach(id => {
+                      const button = document.getElementById(id);
+                      if (button && !button.hasAttribute('data-fbq-attached')) { // Check if event is already attached
+                        console.log(\`Botón \${id} encontrado por script en index.html\`);
+                        button.addEventListener("click", function () {
+                          if (typeof window.fbq === 'function') {
+                            window.fbq("track", "StartTrial", {
+                              content_name: \`Botón \${id} (via index.html)\`,
+                              value: 5,
+                              currency: "USD",
+                            });
+                          }
+                        });
+                        button.setAttribute('data-fbq-attached', 'true'); // Mark as attached
+                      }
+                    });
+                    if (buttonIds.every(id => document.getElementById(id))) {
+                      observer.disconnect(); // Dejar de observar una vez que todos los botones han sido encontrados
+                    }
+                  }
+                }
+              });
+        
+              // Comenzar a observar el documento
+              observer.observe(document.body, { childList: true, subtree: true });
+            });
+              `,
+          }}
+        />
         <noscript>
           <img
             height="1"
